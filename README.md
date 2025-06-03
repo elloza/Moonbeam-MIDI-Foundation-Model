@@ -23,6 +23,13 @@ Download the pre-trained checkpoints from the following link:
 - [Unconditional Generation Checkpoint (ATEPP-Bach)](https://TODO)
 - [Conditional Generation Checkpoint (Commu)](https://TODO)
 
+You can also download the weights directly with `wget`:
+
+```bash
+wget https://huggingface.co/guozixunnicolas/moonbeam-midi-foundation-model/resolve/main/moonbeam_309M.pt
+wget https://huggingface.co/guozixunnicolas/moonbeam-midi-foundation-model/resolve/main/moonbeam_839M.pt
+```
+
 ## Finetuning
 If you modify any configuration files in the `src/llama_recipes` directory, remember to reinstall the package.
 ```bash
@@ -232,6 +239,9 @@ python examples/extract_embedding.py path/to/file.mid path/to/moonbeam_309M.pt
 
 The script loads the model weights, converts the MIDI into Moonbeam tokens and
 prints the resulting embedding vector.
+
+You can run the entire process end-to-end in Google Colab using
+[this notebook](https://colab.research.google.com/github/AIM-QMUL/Moonbeam-MIDI-Foundation-Model/blob/main/examples/embedding_colab.ipynb).
 
 ## License
 
