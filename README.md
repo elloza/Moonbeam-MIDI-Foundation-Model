@@ -219,6 +219,20 @@ torchrun --nnodes 1 --nproc_per_node 1 recipes/finetuning/real_finetuning_player
   --use_cache False \
   --individual_eval True
 ```
+
+## Extracting Embeddings from MIDI
+
+After installing the project and downloading one of the available checkpoints
+(e.g. `moonbeam_309M.pt` or `moonbeam_839M.pt`), you can compute an embedding
+for a MIDI file using the script in `examples/extract_embedding.py`:
+
+```bash
+python examples/extract_embedding.py path/to/file.mid path/to/moonbeam_309M.pt
+```
+
+The script loads the model weights, converts the MIDI into Moonbeam tokens and
+prints the resulting embedding vector.
+
 ## License
 
 This project is licensed under the [Apache License 2.0](LICENSE).
