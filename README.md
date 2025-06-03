@@ -239,6 +239,7 @@ After installing the project and downloading one of the available checkpoints
 for a MIDI file using the script in `examples/extract_embedding.py`:
 
 ```bash
+
 # For the larger checkpoint
 python examples/extract_embedding.py path/to/file.mid path/to/moonbeam_839M.pt
 
@@ -250,8 +251,10 @@ python examples/extract_embedding.py path/to/file.mid path/to/moonbeam_309M.pt \
 The script loads the model weights, converts the MIDI into Moonbeam tokens and
 prints the resulting embedding vector.
 
+
 You can run the entire process end-to-end in Google Colab using
 [this notebook](https://colab.research.google.com/github/AIM-QMUL/Moonbeam-MIDI-Foundation-Model/blob/main/examples/embedding_colab.ipynb).
+
 
 ## License
 

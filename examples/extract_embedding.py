@@ -1,13 +1,13 @@
 import argparse
 import torch
 from llama_recipes.datasets.music_tokenizer import MusicTokenizer
+
 from llama_recipes.transformers_minimal.src.transformers.models.llama.configuration_llama import (
     LlamaConfig,
 )
 from llama_recipes.transformers_minimal.src.transformers.models.llama.modeling_llama import (
     LlamaForCausalLM,
 )
-
 
 def load_model(checkpoint_path: str, config_path: str) -> LlamaForCausalLM:
     """Load the pretrained model weights."""
