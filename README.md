@@ -23,6 +23,18 @@ Download the pre-trained checkpoints from the following link:
 - [Unconditional Generation Checkpoint (ATEPP-Bach)](https://TODO)
 - [Conditional Generation Checkpoint (Commu)](https://TODO)
 
+You can also download the weights directly with `wget`:
+
+```bash
+wget https://huggingface.co/guozixunnicolas/moonbeam-midi-foundation-model/resolve/main/moonbeam_309M.pt
+wget https://huggingface.co/guozixunnicolas/moonbeam-midi-foundation-model/resolve/main/moonbeam_839M.pt
+```
+
+The larger `moonbeam_839M.pt` checkpoint matches the default configuration
+`src/llama_recipes/configs/model_config.json`. To load the smaller
+`moonbeam_309M.pt` checkpoint, use
+`src/llama_recipes/configs/model_config_309M.json`.
+
 ## Finetuning
 If you modify any configuration files in the `src/llama_recipes` directory, remember to reinstall the package.
 ```bash
@@ -227,11 +239,22 @@ After installing the project and downloading one of the available checkpoints
 for a MIDI file using the script in `examples/extract_embedding.py`:
 
 ```bash
-python examples/extract_embedding.py path/to/file.mid path/to/moonbeam_309M.pt
+
+# For the larger checkpoint
+python examples/extract_embedding.py path/to/file.mid path/to/moonbeam_839M.pt
+
+# For the 309M model specify its config file
+python examples/extract_embedding.py path/to/file.mid path/to/moonbeam_309M.pt \
+  --config src/llama_recipes/configs/model_config_309M.json
 ```
 
 The script loads the model weights, converts the MIDI into Moonbeam tokens and
 prints the resulting embedding vector.
+
+
+You can run the entire process end-to-end in Google Colab using
+[this notebook](https://colab.research.google.com/github/AIM-QMUL/Moonbeam-MIDI-Foundation-Model/blob/main/examples/embedding_colab.ipynb).
+
 
 ## License
 
